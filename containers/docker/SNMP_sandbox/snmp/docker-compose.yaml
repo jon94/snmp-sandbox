@@ -12,7 +12,7 @@ services:
     - DD_DOGSTATSD_NON_LOCAL_TRAFFIC=true
     - DD_DOCKER_LABELS_AS_TAGS=true
     - DD_DOCKER_ENV_AS_TAGS=true
-    - DD_SYSTEM_PROBE_ENABLED=true
+    - DD_SYSTEM_PROBE_NETWORK_ENABLED=true
     - DD_PROCESS_AGENT_ENABLED=true
     volumes:
     - /var/run/docker.sock:/var/run/docker.sock:ro
