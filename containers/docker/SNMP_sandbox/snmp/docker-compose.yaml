@@ -34,3 +34,50 @@ services:
     networks:
       static-network:
         ipv4_address: 172.1.1.2
+
+  container-172-1-1-3:
+    container_name: snmpsand-172-1-1-3-container
+    image: bhartford419/snmp_container:latest
+    environment:
+      - DD_TAGS=snmp_container:172.1.1.3
+    ports:
+      - "161"
+    volumes:
+      - ./data/:/usr/local/share/snmpsim/data
+    networks:
+      static-network:
+        ipv4_address: 172.1.1.3
+
+  container-172-1-1-12:
+      container_name: snmpsand-172.1.1.12-container
+      image: bhartford419/snmp_container:latest
+      environment:
+        - DD_TAGS=snmp_container:172.1.1.12,auto-discovery:auto-discovered-device
+      ports:
+        - "161"
+      volumes:
+        - ./data/:/usr/local/share/snmpsim/data
+      networks:
+        static-network:
+          ipv4_address: 172.1.1.12
+    
+  container-172-1-1-13:
+      container_name: snmpsand-172.1.1.13-container
+      image: bhartford419/snmp_container:latest
+      environment:
+        - DD_TAGS=snmp_container:172.1.1.13,auto-discovery:auto-discovered-device
+      ports:
+        - "161"
+      volumes:
+        - ./data/:/usr/local/share/snmpsim/data
+      networks:
+        static-network:
+          ipv4_address: 172.1.1.13
+    
+
+networks:
+  static-network:
+    ipam:
+      config:
+        - subnet: 172.1.1.0/28
+    
