@@ -13,8 +13,7 @@ instances:
     community_string: nasuni-filer
     profile: custom-profile
     tags:
-      - location:boston
-  
+      - "location:boston"  
   
   - network_address: 172.1.1.1/28
     snmp_version: 2
